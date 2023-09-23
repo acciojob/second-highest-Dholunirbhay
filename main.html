@@ -10,33 +10,51 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			if(arr.length <= 1 ){
-				return -Infinity;
-			}
+		let max = arr[0], s_max = arr[0];
+for(let i = 0; i < arr.length-1; i++){
+   if(arr[i] == arr[i+1]){
+	   return "-Infinity";
+	   // console.log("-Infinity");
+       // System.out.println("-Infinity");
+       return;
+   }
+}
+if(arr.length > 1){
+for(let i = 0; i < arr.length; i++){
+   if( arr[i] > max){
+       max = arr[i];
+   }
+}
+// System.out.println(max);
+for(let i = 0; i < arr.length; i++){
+   if(arr[i] <max && arr[i] > s_max){
+       s_max = arr[i];
+   }
+}
+	return s_max;
+// System.out.println(s_max);
+}
 
-			if(arr[0]==arr[arr.length-1]){
-				return -Infinity;
-			}
-
-			 
-			arr.sort((a,b) => a-b);
-
-			let ans = arr[arr.length-2];
-			return ans;
+else{
+	return "-Infinity";
+	// console.log("-Infinity");
+   // System.out.println("-Infinity");
+}
+			
 			
 		}
- 
+
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
-			}  
+			}
 			alert(secondHighest(arr));
 		}
 		Main();
 	</script>
- 
+
     <script type="text/javascript" src="./script.js">
 </script>
 
